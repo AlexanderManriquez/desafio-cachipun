@@ -16,8 +16,8 @@
     <main class="game">
         <section class="number-of-games">
             <h2>¿Cúantas veces deseas jugar?</h2>
-            <label for="pet-select">Selecciona: </label>
-            <select name="pets" id="pet-select">
+            <label for="selection">Selecciona: </label>
+            <select name="quantity" id="selection">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -31,12 +31,22 @@
             <button class="choice" data-value="1">Papel &#9995;</button>
             <button class="choice" data-value="2">Tijera &#9996;</button>
         </section>
-        <section class="results">
-            <div class="user"></div>
-            <div class="machine"></div>
+        <section class="results" id="results">
+            <div class="user">
+                <p id="user__result"></p>
+            </div>
+            <div class="machine">
+                <p id="machine__result"></p>
+            </div>
+            <div class="total">
+                <p id="total__result"></p>
+            </div>
         </section>
     </main>
-
+    
+    <footer class="footer">
+        <p>Developed by Alexander Manriquez. 2024.</p>
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
 
