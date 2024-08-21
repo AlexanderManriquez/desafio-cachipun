@@ -18,7 +18,7 @@ function startGame() {
 
 //Se captura la elección del usuario mientras queden juegos restantes
 document.querySelectorAll('.choice').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         if (juegosRestantes > 0) {
             eleccionUsuario = parseInt(this.getAttribute('data-value'));
             jugar();
@@ -38,6 +38,11 @@ function jugar() {
     juegosRestantes--;
     actualizarCuenta();
 
+    // Verifica si la partida ha terminado
+    if (juegosRestantes === 0) {
+        finalizarPartida();
+
+    }
 }
 
 // Función para convertir las elecciones a texto
@@ -61,7 +66,7 @@ function determinarGanador(eleccionUsuario, eleccionMaquina) {
         victoriasMaquina++;
     } else if (eleccionUsuario == 1 && eleccionMaquina == 0) {
         resultado = "Gana el usuario";
-        victoriasUsuario++;    
+        victoriasUsuario++;
     } else if (eleccionUsuario == 0 && eleccionMaquina == 2) {
         resultado = "Gana el usuario";
         victoriasUsuario++;
@@ -81,6 +86,19 @@ function determinarGanador(eleccionUsuario, eleccionMaquina) {
 
 // Función para actualizar la cuenta de victorias
 function actualizarCuenta() {
-    document.getElementById("total__result").textContent = 
+    document.getElementById("total__result").textContent =
         "La cuenta va: Usuario: " + victoriasUsuario + " - Máquina: " + victoriasMaquina;
+}
+
+// Función para finalizar la partida y mostrar un mensaje final
+function finalizarPartida() {
+    let mensajeFinal;
+    if (victoriasUsuario > victoriasMaquina) {
+        mensajeFinal = "¡Felicidades, ganaste la partida!";
+    } else if (victoriasUsuario < victoriasMaquina) {
+        mensajeFinal = "La máquina ganó la partida. ¡Intenta de nuevo!";
+    } else {
+        mensajeFinal = "La partida terminó en empate.";
+    }
+    document.getElementById("final__message").textContent = mensajeFinal;
 }
