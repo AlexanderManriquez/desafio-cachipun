@@ -1,9 +1,13 @@
 //= 0 piedra, 1 papel, 2 tijera
-
+let cantidadDeJuegos;
 let eleccionUsuario;
 let eleccionMaquina = Math.floor(Math.random()*3);
 console.log(eleccionMaquina)
 
+
+function startGame() {
+    document.getElementById("buttons").style.visibility = "visible";
+}
 //Se captura la elección del usuario
 document.querySelectorAll('.choice').forEach(button => {
     button.addEventListener('click', function() {
