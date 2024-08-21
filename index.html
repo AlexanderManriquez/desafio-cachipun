@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cachipun</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
+    <header class="header">
+        <h1>C A C H I P Ú N</h1>
+    </header>
+
+    <main class="game">
+        <section class="number-of-games">
+            <h2>¿Cúantas veces deseas jugar?</h2>
+            <label for="selection">Selecciona: </label>
+            <select name="quantity" id="selection">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button class="start" onclick="startGame()">Comenzar</button>
+        </section>
+        <section class="buttons" id="buttons">
+            <button class="choice" data-value="0">Piedra &#128074;</button>
+            <button class="choice" data-value="1">Papel &#9995;</button>
+            <button class="choice" data-value="2">Tijera &#9996;</button>
+        </section>
+        <section class="results" id="results">
+            <div class="user">
+                <p id="user__result"></p>
+            </div>
+            <div class="machine">
+                <p id="machine__result"></p>
+            </div>
+            <div class="total">
+                <p id="total__result">La cuenta va: Usuario: 0 - Máquina: 0</p>
+            </div>
+            <div class="final">
+                <p id="final__message"></p>
+            </div>
+        </section>
+    </main>
     
-    <section class="buttons">
-        <button class="choice" data-value="0">Piedra</button>
-        <button class="choice" data-value="1">Papel</button>
-        <button class="choice" data-value="2">Tijera</button>
-    </section>
+    <footer class="footer">
+        <p>Developed by Alexander Manriquez. 2024</p>
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
