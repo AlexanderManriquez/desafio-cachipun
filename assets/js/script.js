@@ -1,12 +1,13 @@
 // = 0 piedra, 1 papel, 2 tijera
-//***Pendientes: Agregar reglas a través de un modal(?); 
-//agregar botón de reinicio, agregar nombre al usuario (?) */
 let cantidadDeJuegos;
 let juegosRestantes;
 let eleccionUsuario;
 let eleccionMaquina;
 let victoriasUsuario = 0;  // Contador de victorias del usuario
 let victoriasMaquina = 0;  // Contador de victorias de la máquina
+let modal = document.getElementById("rules__modal");
+let btn = document.getElementById("rules__button");
+let span = document.getElementsByClassName("close")[0];
 
 //Función para mostrar los botones de las opciones del juego
 function startGame() {
@@ -14,6 +15,7 @@ function startGame() {
     juegosRestantes = cantidadDeJuegos; // Inicializar el contador de juegos restantes
     document.getElementById("buttons").style.visibility = "visible";
     document.getElementById("results").style.visibility = "visible";
+    document.querySelector(".start").disabled = true;
 }
 
 //Se captura la elección del usuario mientras queden juegos restantes
@@ -38,7 +40,6 @@ function jugar() {
     // Verifica si la partida ha terminado
     if (juegosRestantes === 0) {
         finalizarPartida();
-
     }
 }
 
@@ -113,4 +114,21 @@ function reiniciarJuego() {
     document.getElementById("final__message").textContent = "";
     document.getElementById("buttons").style.visibility = "hidden";
     document.getElementById("reset__button").style.visibility = "hidden";
+    document.querySelector(".start").disabled = false;
+}
+
+
+//Funciones para mostrar el modal con las reglas del juego
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
