@@ -13,13 +13,8 @@ permita a una persona jugar al cachipún contra el computador, indicando cuánta
 * Se muestra mensaje con opciones elegidas por  los jugadores.
 * Se muestra el resultado parcial.
 * Se muestra al ganador luego de terminadas las rondas deseadas.
-
-
-🏴‍☠️ Pendiente:
-
 * Botón para reiniciar el juego.
 * Incluir reglas del juego.
-* Capturar nombre del usuario.
 
 
 🎮 ¿Deseas jugar?
