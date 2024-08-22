@@ -13,17 +13,19 @@ h1 {
     text-align: center;
     font-size: 30px;
     font-family: "Matemasie", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .game {
     width: 100%;
-    height: 83vh;
+    height: 87vh;
     margin: 0;   
     background-image: url(../img/cachipun.jpg);
 }
 
 .number-of-games{
-    width: 70%;
+    width: 100%;
     height: 33%;
     margin: 0 auto;
     display: flex;
@@ -32,9 +34,17 @@ h1 {
     justify-content: space-between;
 }
 
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
+.start {
+    margin: 10px 20px;
+}
 
-.buttons {
+.game-buttons {
     width: 100%;
     height: 33%;
     display: flex;
@@ -43,13 +53,13 @@ h1 {
     visibility: hidden;
 }
 
-.choice, .start {
+.choice, .start, .reset {
     width: 15%;
     border: 1px solid black;
     background-color: #333;
     color: wheat;
     font-size: 24px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 25px;      
 }   
 
@@ -64,7 +74,12 @@ h1 {
     visibility: hidden;
 }
 
+.reset {
+    visibility: hidden;
+}
+
 .footer {
     height: 5%;
     text-align: center;
+    margin: 0;
 }

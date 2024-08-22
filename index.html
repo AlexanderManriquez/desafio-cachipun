@@ -24,12 +24,20 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <button class="start" onclick="startGame()">Comenzar</button>
+            <class class="button">
+                <button class="start" onclick="startGame()">Comenzar</button>
+                <button class="start" onclick="startGame()">Reglas</button>
+            </class>
         </section>
-        <section class="buttons" id="buttons">
-            <button class="choice" data-value="0">Piedra &#128074;</button>
-            <button class="choice" data-value="1">Papel &#9995;</button>
-            <button class="choice" data-value="2">Tijera &#9996;</button>
+        <section>
+            <div class="game-buttons">
+                <button id="reset__button" class="reset"  onclick="reiniciarJuego()">Reiniciar Juego</button>
+            </div>  
+            <div class="game-buttons" id="buttons">
+                <button class="choice" data-value="0">Piedra &#128074;</button>
+                <button class="choice" data-value="1">Papel &#9995;</button>
+                <button class="choice" data-value="2">Tijera &#9996;</button>
+            </div>          
         </section>
         <section class="results" id="results">
             <div class="user">
@@ -43,6 +51,7 @@
             </div>
             <div class="final">
                 <p id="final__message"></p>
+    </div>
             </div>
         </section>
     </main>

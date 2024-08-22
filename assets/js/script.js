@@ -1,5 +1,5 @@
 // = 0 piedra, 1 papel, 2 tijera
-//***Pendientes: Agregar reglas a través de un modal(?); mostrar mensaje de felicitacion si el usuario gana, 
+//***Pendientes: Agregar reglas a través de un modal(?); 
 //agregar botón de reinicio, agregar nombre al usuario (?) */
 let cantidadDeJuegos;
 let juegosRestantes;
@@ -22,10 +22,7 @@ document.querySelectorAll('.choice').forEach(button => {
         if (juegosRestantes > 0) {
             eleccionUsuario = parseInt(this.getAttribute('data-value'));
             jugar();
-        } else {
-            alert("El juego ha terminado.");
-            document.getElementById("buttons").style.visibility = "hidden";
-        }
+        } 
     });
 });
 
@@ -101,4 +98,19 @@ function finalizarPartida() {
         mensajeFinal = "La partida terminó en empate.";
     }
     document.getElementById("final__message").textContent = mensajeFinal;
+    document.getElementById("buttons").style.visibility = "hidden"; // Ocultar botones de opciones
+    document.getElementById("reset__button").style.visibility = "visible"; // Mostrar botón de reinicio
+}
+
+// Función para reiniciar el juego
+function reiniciarJuego() {
+    // Reiniciar todas las variables y contadores
+    victoriasUsuario = 0;
+    victoriasMaquina = 0;
+    document.getElementById("user__result").textContent = "Elección del usuario: -";
+    document.getElementById("machine__result").textContent = "Elección de la máquina: -";
+    document.getElementById("total__result").textContent = "La cuenta va: Usuario: 0 - Máquina: 0";
+    document.getElementById("final__message").textContent = "";
+    document.getElementById("buttons").style.visibility = "hidden";
+    document.getElementById("reset__button").style.visibility = "hidden";
 }
