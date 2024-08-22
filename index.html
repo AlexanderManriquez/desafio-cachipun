@@ -18,18 +18,26 @@
             <h2>¿Cúantas veces deseas jugar?</h2>
             <label for="selection">Selecciona: </label>
             <select name="quantity" id="selection">
-                <option value="1">1</option>
-                <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4</option>
                 <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
-            <button class="start" onclick="startGame()">Comenzar</button>
+            <class class="button">
+                <button class="start" id="button__start" onclick="startGame()">Comenzar</button>
+                <button class="start" id="rules__button">Reglas</button>
+            </class>
         </section>
-        <section class="buttons" id="buttons">
-            <button class="choice" data-value="0">Piedra &#128074;</button>
-            <button class="choice" data-value="1">Papel &#9995;</button>
-            <button class="choice" data-value="2">Tijera &#9996;</button>
+        <section class="game-buttons">
+            <div class="choices">
+                <button id="reset__button" class="reset"  onclick="reiniciarJuego()">Reiniciar Juego</button>
+            </div>  
+            <div id="buttons" class="choices">
+                <button class="choice" data-value="0">Piedra &#128074;</button>
+                <button class="choice" data-value="1">Papel &#9995;</button>
+                <button class="choice" data-value="2">Tijera &#9996;</button>
+            </div>          
         </section>
         <section class="results" id="results">
             <div class="user">
@@ -43,6 +51,7 @@
             </div>
             <div class="final">
                 <p id="final__message"></p>
+    </div>
             </div>
         </section>
     </main>
@@ -50,6 +59,18 @@
     <footer class="footer">
         <p>Developed by Alexander Manriquez. 2024</p>
     </footer>
+
+    <div id="rules__modal" class="modal">
+        <div class="modal__content">
+            <span class="close">&times;</span>
+            <h2>Reglas del Juego</h2>
+            <p>Piedra vence a Tijera.</p>
+            <p>Papel vence a Piedra.</p>
+            <p>Tijera vence a Papel.</p>
+            <p>El juego es un empate si ambos eligen la misma opción.</p>
+        </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
 </body>
 
